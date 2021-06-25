@@ -67,3 +67,15 @@ if __name__ == '__main__':
     
     rmse = metrics.rmse(l1, l2)
     print(f'RMSE {rmse}')
+    
+    # msle = metrics.msle(l1,l2)
+    # print(f'MSLE {msle}')
+    
+    # mpe = metrics.mpe(l1,l2)
+    # print(f'MPE {mpe}')
+    
+    # mape = metrics.mape(l1,l2)
+    # print(f'MAPE {mape}')
+    
+    r2 = metrics.r2(l1,l2)
+    print(f'R^2 {r2}')

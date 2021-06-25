@@ -356,3 +356,77 @@ def mse(y_true,y_pred):
 def rmse(y_true,y_pred):
     return np.sqrt(mse(y_true,y_pred))
 
+
+def msle(y_true,y_pred):
+    """
+    Function to calculate MSLE: Mean Squared Log Error
+    :param y_true: list of true values
+    :param y_pred: list of predicted values
+    
+    :return: mean squared logarithmic error
+    """
+    
+    error = 0
+    for yt,yp in zip(y_true,y_pred):
+        error += (np.log(1+yt)-np.log(1+yp))**2
+    
+    return error/len(y_true)
+
+def mpe(y_true,y_pred):
+    try:
+        """
+        Function to calculate MPE: Mean Percentage Error
+        :param y_true: list of true values
+        :param y_pred: list of predicted values
+        
+        :return: mean percentage error
+        """
+        
+        error = 0
+        for yt,yp in zip(y_true,y_pred):
+            error += (yt - yp)/yt
+        
+        return error/len(y_true)
+    except:
+        return None
+    
+def mape(y_true,y_pred):
+    try:
+        """
+        Function to calculate MAPE: Mean Absolute Percentage Error
+        :param y_true: list of true values
+        :param y_pred: list of predicted values
+        :return: mean absolute percentage error
+        """
+
+        error = 0
+        for yt, yp in zip(y_true,y_pred):
+            error += np.abs(yt-yp)/yt
+            
+        return error/len(y_true)
+    except:
+        return None
+
+def r2(y_true,y_pred):
+    try:
+        """
+        Function to calculate r-squared score (coefficiente of determination)
+        
+        :param y_true: list of true values
+        :param y_pred: list of predicted values
+        :return: coefficient of determination or r-squared
+        
+        """
+        
+        mean_yt= np.mean(y_true)
+        numerator = 0
+        denominator = 0
+        
+        for yt, yp in zip(y_true, y_pred):
+            numerator += (yt-yp) ** 2
+            denominator += (yt-mean_yt) ** 2
+        
+        ratio = numerator/denominator
+        return 1-ratio
+    except:
+        return None
