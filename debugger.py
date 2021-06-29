@@ -1,7 +1,7 @@
-import metrics
+from metrics import metrics
 
 if __name__ == '__main__':
-
+  
     l1 = [0,1,1,1,0,0,0,1]
     l2 = [0,1,0,1,0,1,0,0]
 
