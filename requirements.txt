@@ -3,3 +3,7 @@ sklearn
 numpy
 pandas
 xgboost
+tensorflow
+scikit-optimize
+hyperopt
+nltk

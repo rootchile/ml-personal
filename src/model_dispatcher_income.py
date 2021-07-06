@@ -14,6 +14,8 @@ models = {
         'preprocessing_by_feature': False,
         'numerical_features': False,
         'categorical_features_d2': False,
+        'target_encoding': False
+
     },
     'xgboost_classifier': {
         'model': xgb.XGBClassifier(n_jobs=-1,  verbosity=0, max_depth=7, n_estimators=200),
@@ -21,6 +23,8 @@ models = {
         'preprocessing_by_feature': True,
         'numerical_features': False,
         'categorical_features_d2': False,
+        'target_encoding': False
+
     },
     'xgboost_classifier_with_numeric': {
         'model': xgb.XGBClassifier(n_jobs=-1, verbosity=0, max_depth=7, n_estimators=200),
@@ -28,7 +32,8 @@ models = {
         'preprocessing_by_feature': True,
         'numerical_features': True,
         'categorical_features_d2': False,
-        
+        'target_encoding': False
+
     },
     
     'xgboost_classifier_with_features2d': {
@@ -36,6 +41,18 @@ models = {
         'preprocessing':  preprocessing.LabelEncoder(),
         'preprocessing_by_feature': True,
         'numerical_features': True,
-        'categorical_features_d2': True
+        'categorical_features_d2': True,
+        'target_encoding': False
+
+    },
+    
+        
+    'xgboost_classifier_with_targetencoding': {
+        'model': xgb.XGBClassifier(n_jobs=-1,  verbosity=2, max_depth=7, n_estimators=200, ),
+        'preprocessing':  preprocessing.LabelEncoder(),
+        'preprocessing_by_feature': True,
+        'numerical_features': False,
+        'categorical_features_d2': False,
+        # 'target_encoding': True
     },
 }
